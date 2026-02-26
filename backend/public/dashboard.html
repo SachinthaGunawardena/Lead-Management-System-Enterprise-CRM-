@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lead Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="card">
+        <!-- HEADER -->
+        <div class="header">
+          <h1>Lead Dashboard</h1>
+          <button id="logout" class="logout">Logout</button>
+        </div>
+
+        <!-- CREATE LEAD -->
+        <h3>Create Lead</h3>
+
+        <form id="leadForm" class="form-row">
+          <input id="name" type="text" placeholder="Name" required />
+          <input id="email" type="email" placeholder="Email" />
+          <input id="phone" type="text" placeholder="Phone" required />
+          <button type="submit" class="primary">Add Lead</button>
+        </form>
+
+        <!-- ALL LEADS -->
+        <h3>All Leads</h3>
+
+        <input
+          type="text"
+          id="searchInput"
+          class="search"
+          placeholder="Search by name, email or phone..."
+        />
+
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="leadsTable"></tbody>
+        </table>
+
+        <!-- ================== -->
+        <!-- ANALYTICS SECTION -->
+        <!-- ================== -->
+
+        <!-- ================== -->
+        <!-- ANALYTICS SECTION -->
+        <!-- ================== -->
+
+        <!-- ============================= -->
+        <!-- ENTERPRISE ANALYTICS SECTION -->
+        <!-- ============================= -->
+
+        <hr />
+
+        <h2 class="section-title">Business Analytics</h2>
+
+        <div class="enterprise-kpi-grid">
+          <div class="enterprise-card">
+            <div class="card-header">
+              <span>Telegram Leads</span>
+              <span class="trend" id="telegramGrowth">0%</span>
+            </div>
+            <div class="card-value" id="telegramTotal">0</div>
+          </div>
+
+          <div class="enterprise-card">
+            <div class="card-header">
+              <span>Telegram Conversion</span>
+              <span class="trend down">-2%</span>
+            </div>
+            <div class="card-value" id="telegramConversion">0%</div>
+          </div>
+
+          <div class="enterprise-card">
+            <div class="card-header">
+              <span>Total Leads</span>
+            </div>
+            <div class="card-value" id="totalLeads">0</div>
+          </div>
+
+          <div class="enterprise-card">
+            <div class="card-header">
+              <span>Converted Leads</span>
+            </div>
+            <div class="card-value" id="convertedLeads">0</div>
+          </div>
+        </div>
+
+        <div class="enterprise-chart-grid">
+          <div class="enterprise-chart-card">
+            <h3>Telegram Monthly Performance</h3>
+            <canvas id="telegramMonthlyChart"></canvas>
+          </div>
+
+          <div class="enterprise-chart-card">
+            <h3>Lead Source Distribution</h3>
+            <canvas id="sourceChart"></canvas>
+          </div>
+        </div>
+       
+
+    <!-- SCRIPTS (ORDER IS IMPORTANT) -->
+
+    <!-- Your main app logic -->
+    <script src="app.js"></script>
+
+    <!-- Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Analytics JS -->
+    <script src="dashboard.js"></script>
+  </body>
+</html>
